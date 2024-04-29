@@ -1,0 +1,28 @@
+<body class="main-bg">
+        <div class="login-container text-c animated flipInX">
+                <div>
+                    <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+                </div>
+                    <h3 class="text-whitesmoke">Inicia Sesion</h3>
+                    <p class="text-whitesmoke">Ingresa con tu cuenta</p>
+                <div class="container-content">
+                    <form action="/users/signin" method="POST" class="margin-t">
+                        <div class="form-group">
+                            <input type="email" name ="email" class="form-control" placeholder="Inserta tu email" required="true">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name ="password" class="form-control" placeholder="Ingresa el password" required="true">
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                        </div>
+                        <button type="submit" class="form-button button-l margin-b">Ingresar</button>
+
+                        <a class="text-darkyellow" href="/forgot"><small>Olvidaste tu contraseña?</small></a>
+                        <p class="text-whitesmoke text-center"><small>No tienes cuenta?</small></p>
+                        <a class="text-darkyellow" href="/users/signup"><small>Registrate!</small></a>
+                    </form>
+                    <p class="margin-t text-whitesmoke"><small> Customizero &copy; 2021</small> </p>
+                </div>
+            </div>
+</body>

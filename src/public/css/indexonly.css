@@ -1,0 +1,90 @@
+.button {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 2% 5%;
+    display: inline-block;
+    margin: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    font-size: 80%;
+}
+.button:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+/* Button 1 */
+.button-2 {
+    border: 3px solid #fff;
+    color: #fff;
+}
+
+.button-1f {
+    overflow: hidden;
+}
+.button-1f:after {
+    width: 101%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    background: #f6f5f5;
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.button-1f:hover,
+.button-1f:active {
+    color: rgb(81, 166, 231);
+}
+.button-1f:hover:after {
+    height: 104%;
+    opacity: 1;
+}
+.button-1f:active:after {
+    height: 130%;
+    opacity: 1;
+}
+.color-pattern-1 {
+    background: rgb(81, 166, 231);
+}
+.carousel-item
+{
+    padding:0;
+
+}
+
+.secondary-carousel
+{
+padding: 7% 15%;!important
+
+}
+.pickarticle
+{
+  text-align: center;
+  color: rgb(81, 166, 231);
+  padding-top: 4rem;
+  width: 100%;
+
+
+}
+
+.pickarticle h1{
+  font-family: Oswald !important;
+  font-size: 4rem! important;
+  font-style: normal !important;
+}

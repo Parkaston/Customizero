@@ -1,0 +1,98 @@
+<body class="main-bg">
+        <div class="login-container text-c animated flipInX">
+                <div>
+                    <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+                </div>
+                    <h3 class="text-whitesmoke">Ingreso de productos.</h3>
+                    <p class="text-whitesmoke">Ingresa los siguientes datos:</p>
+                <div class="container-content">
+                    <form action= "/insert" method="POST" class="margin-t">
+                      <div class="form-group">
+                          <input type="text" name ="codigo" class="form-control" placeholder="Codigo" required="true">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" name ="numeroId" class="form-control" placeholder="Numero de Id" required="true">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" name ="nombre" class="form-control" placeholder="Nombre" required="true">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" name ="precio" class="form-control" placeholder="Precio" required="true">
+                      </div>
+
+                      <div class="form-group">
+                          <input type="text" name ="primeraImagen" class="form-control" placeholder="Link de primera imagen" required="true">
+                      </div>
+
+                      <div class="form-group">
+                          <input type="text" name ="segundaImagen" class="form-control" placeholder="Link de segunda imagen" required="true">
+                      </div>
+
+                      <div class="form-group">
+                          <input type="text" name ="tercerImagen" class="form-control" placeholder="Link de tercer imagen" required="true">
+                      </div>
+
+                      <div class="form-group">
+                          <input type="text" name ="cuartaImagen" class="form-control" placeholder="Link de cuarta imagen" required="true">
+                      </div>
+
+                      <div class="form-group">
+                          <input type="text" name ="color" class="form-control" placeholder="Color del producto" required="true">
+                      </div>
+
+                      <div class="form-group">
+                          <input type="text" name ="material" class="form-control" placeholder="Material del producto" required="true">
+                      </div>
+
+                      <div class="form-group">
+                          <input type="text" name ="categoryPicture" class="form-control" placeholder="Foto de categoria" required="true">
+                      </div>
+
+                      <div class="form-group">
+                          <input type="text" name ="tamaño" class="form-control" placeholder="Tamaño del producto" required="true">
+                      </div>
+                      <div class="form-group">
+                        <label for="categoria">Selecciona una categoria</label>
+                          <select class="categoria" name="categoria" id="categoria">
+                              <option value="Llaverosgrabados">Llaveros</option>
+                              <option value="Mecheros">Mecheros</option>
+                              <option value="Placas">Placas</option>
+                              <option value="Pulseras">Pulseras</option>
+                              <option value="Chapas">Chapas</option>
+                              <option value="Figuras">Figuras</option>
+                              <option value="Llaverosdobles">Llaveros Dobles</option>
+                              <option value="Huesos">Huesos</option>
+                          </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="categoria">¿Es grabable?</label>
+                          <select class="esgrabable" name="esgrabable" id="esgrabable">
+                              <option value="true">Si</option>
+                              <option value="false">No</option>
+                          </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="categoria">¿Es grabable detras?</label>
+                          <select class="esgrabableDetras" name="esgrabableDetras" id="esgrabableDetras">
+                              <option value="true">Si</option>
+                              <option value="false">No</option>
+                          </select>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label for="categoria">¿Es FotoGrabable??</label>
+                          <select class="esfotograbable" name="esfotograbable" id="esfotograbable">
+                              <option value="true">Si</option>
+                              <option value="false">No</option>
+                          </select>
+                      </div>
+
+                        <button type="submit" class="form-button button-l margin-b">Registrar producto</button>
+                      </form>
+                    <p class="margin-t text-whitesmoke"><small> Customizero &copy; 2021</small> </p>
+                </div>
+            </div>
+</body>

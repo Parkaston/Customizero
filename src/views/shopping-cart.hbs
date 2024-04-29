@@ -1,0 +1,153 @@
+
+<head>
+  <!-- Importando stylesheet personal -->
+  <link href="\css\shoppingcart.css" rel="stylesheet" type="text/css">
+</head>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="ibox">
+
+
+
+{{#if products}}
+<div class="ibox-title">
+    <span class="pull-right"> <h4>Total: {{session.cart.totalPrice}}€  <strong>({{session.cart.totalQty}} items)</h4> </strong></span>
+    <h5>Articulos en tu carrito</h5>
+</div>
+{{#each products}}
+<div class="ibox-content">
+    <div class="table-responsive">
+        <table class="table shoping-cart-table">
+
+            <tbody>
+            <tr>
+                <td width="90">
+                    <div class="cart-product-imitation">
+                      <div class="img-item">
+                        <a href="#" data-id="1">
+                          <img src="{{ this.item.primeraImagen }}" alt="producto">
+                        </a>
+                      </div>
+                    </div>
+                </td>
+                <td class="desc">
+                    <h3>
+                        <a href="#" class="text-navy">
+                            {{this.item.nombre}}
+                        </a>
+                    </h3>
+{{#if this.item.esfotograbable}}
+{{#if this.fotoAgregada}}
+<h1>Foto agregada con exito!</h1>
+{{else}}
+<form  enctype="multipart/form-data" class="form-horizontal form" action="/agregarfoto/{{this.posicion}}" method="POST">
+      <div class="form-group">
+            <label for="leyendaPrincipal">¿Que foto te gustaria grabar??</label>
+
+              <input type="file" accept="image/png, .jpeg, .jpg" class="form-control" id="fotoElegida" name="fotoElegida" >
+              <button type="submit" class="btn btn-light-moon btn-rounded">Agregar foto</button>
+</form>
+              <small id="paraLeyendaPrincipal" class="form-text text-muted">Admite un tamaño máximo de 5MB (JPEG/PNG).</small>
+            </div>
+{{/if}}
+{{else}}
+<form class="form-horizontal form" action="/cambiarfrasedelantera/{{this.posicion}}" method="POST">
+      <div class="form-group">
+            <label for="leyendaPrincipal">¿Que te gustaria grabarle en la cara principal?</label>
+
+              <input type="text" class="form-control" id="leyendaPrincipal" name="fraseelegida" placeholder="{{this.fraseDelantera}}">
+              <button type="submit" class="btn btn-light-moon btn-rounded">Agregar frase delantera</button>
+</form>
+              <small id="paraLeyendaPrincipal" class="form-text text-muted">Admite un máximo de 10 caracteres.</small>
+            </div>
+{{/if}}
+
+
+{{#if this.item.esgrabableDetras}}
+<form class="form-horizontal form" action="/cambiarfrasetrasera/{{this.posicion}}" method="POST">
+
+    <div class="form-group">
+            <label for="leyendaSecundaria">¿Que te gustaria grabarle en la cara secundaria?</label>
+            <input type="text" class="form-control" id="leyendaSecundaria" name="fraseelegida" placeholder="{{this.fraseTrasera}}">
+            <button type="submit" class="btn btn-light-moon btn-rounded">Agregar frase trasera</button>
+</form>
+            <small class="form-text text-muted">Admite un máximo de 10 caracteres.</small>
+    </div>
+    
+{{/if}}
+
+
+
+
+                          <form class="form-horizontal form" action="/toggleCajaDeRegalo/{{this.posicion}}" method="POST">
+                              <div class="m-t-sm">
+                              {{#if this.cajaDeRegalo}}
+                        <button class="btn btn-cool-blues btn-rounded" type="submit" class="text-muted"><i class="fa fa-gift"></i>Quitar caja de regalo </a>
+                          </form>
+                    {{else}}
+                        <button class="btn btn-cool-blues btn-rounded" type="submit" class="text-muted"><i class="fa fa-gift"></i>Agregar caja de regalo</a>
+                    </form>
+                    {{/if}}
+                          <form class="form-horizontal form" action="/removeritem/{{this.posicion}}" method="POST">
+                        <button class="btn btn-pink-moon btn-rounded" type="submit" class="text-muted"><i class="fa fa-trash"></i> Remover item</a>
+                          </form>
+                              </div>
+                </td>
+
+                <td class="product-count">
+
+              <form action="/quitarUno/{{this.posicion}}" method="POST" class="count-inlineflex">
+                  <div class="qtyminus">
+
+                    <button type="submit" class="btn btn-default btn-circle">-</button>
+                  </div>
+              </form>
+                            <input type="text" readonly="readonly" name="quantity" value="{{this.qty}}" class="qty">
+
+
+              <form action="/agregarUno/{{this.posicion}}" method="POST" class="count-inlineflex">
+                            <button type="submit" class="btn btn-default btn-circle">+</button>
+              </form>
+                </td>
+                <!-- <td width="65">
+                    <input type="text" class="form-control" placeholder="1">
+                </td> -->
+                <td>
+                    <h4>
+                      {{this.price}}€
+                    </h4>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{{/each}}
+
+{{else}}
+
+
+<strong>No hay items en el carrito.</strong>
+
+{{/if}}
+
+
+{{#if products}}
+                <div class="ibox-content">
+                    <a href="/checkout" class="btn btn-primary pull-right"><i class="fa fa fa-shopping-cart"></i>Checkout</a>
+                    <a href="/" class="btn btn-white"><i class="fa fa-arrow-left"></i> Continuar comprando</button>
+
+                </div>
+            </div>
+                  </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</div>
+</div>

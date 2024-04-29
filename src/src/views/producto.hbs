@@ -1,0 +1,453 @@
+<head>
+  <!-- Importando stylesheet personal -->
+  <link href="\css\productstyle.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<div class="card-wrapper">
+  <div class="card">
+    <!-- Zona izquierda -->
+    <div class="product-imgs">
+      <div class="img-display">
+        <div class="img-showcase">
+
+          <!-- Cada uno de los thumbnails -->
+          <img src="{{ product.primeraImagen }}" alt="producto">
+          <img src="{{ product.segundaImagen }}" alt="producto">
+          <img src="{{ product.tercerImagen }}" alt="producto">
+          <img src="{{ product.cuartaImagen }}" alt="producto">
+          <!-- Cada uno de los thumbnails -->
+        </div>
+      </div>
+      <div class="img-select">
+        <div class="img-item">
+          <a href="#" data-id="1">
+            <img src="{{ product.primeraImagen }}" alt="producto">
+          </a>
+        </div>
+        <div class="img-item">
+          <a href="#" data-id="2">
+            <img src="{{ product.segundaImagen }}" alt="producto">
+          </a>
+        </div>
+        <div class="img-item">
+          <a href="#" data-id="3">
+            <img src="{{ product.tercerImagen }}" alt="producto">
+          </a>
+        </div>
+        <div class="img-item">
+          <a href="#" data-id="4">
+            <img src="{{ product.cuartaImagen }}" alt="producto">
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Zona derecha -->
+    <div class="product-content">
+      <h2 class="product-title">{{product.nombre}}</h2>
+
+      <!-- <div class = "product-rating">
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star-half-alt"></i>
+
+
+            <span>4.7(21)</span>
+          </div> -->
+      <!-- Rating de estrellas -->
+
+
+
+      <div class="product-price">
+        <!-- <p class = "last-price">Precio viejo <span>$257.00</span></p> -->
+        <p class="new-price">Precio: <span>{{product.precio}}€</span></p>
+      </div>
+      <!-- Descuento  -->
+      <div class="product-detail">
+        <!-- <h2>Sobre el item </h2> -->
+        <p>Graba el nombre o leyenda que deseas en la chapa adicional.</p>
+        <p> El precio incluye el grabado de una cara.</p>
+        <ul>
+          <li>¿Se puede grabar? {{#if product.esgrabable}} <span>Si</span> {{else}} <span>No</span>{{/if}} </li>
+          <li>Color: <span>{{product.color}}</span></li>
+          <li>Material: <span>{{product.material}}</span></li>
+          <li>Tamaño: <span>{{product.tamaño}}</span></li>
+        </ul>
+
+
+
+
+
+        <div class="purchase-info">
+          <a href="/add-to-cart/{{product._id}}">
+            <button type="button" class="btn addbutton" href="/">Agregar al carrito <i class="fas fa-shopping-cart"></i>
+          </button>
+          </a>
+
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin links sociales -->
+
+
+<!-- Recomendados -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Los mas<b> buscados</b></h2>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="resources\productpage\Manzanita.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Manzanita</h4>
+                    <p class="item-price"><strike>$400.00</strike> <span>$369.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Agregar al carro</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img class="carousel-img" src="resources\productpage\Manzanita.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Manzanita</h4>
+                    <p class="item-price"><strike>$25.00</strike> <span>$23.99</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Agregar al carro</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="resources\productpage\Manzanita.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Manzanita</h4>
+                    <p class="item-price"><strike>$899.00</strike> <span>$649.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Agregar al carro</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="resources\productpage\Manzanita.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Manzanita</h4>
+                    <p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Agregar al carro</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="resources\productpage\Manzanita.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Manzanita</h4>
+                    <p class="item-price"><strike>$289.00</strike> <span>$269.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Agregar al carro</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="resources\productpage\Manzanita.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Manzanita</h4>
+                    <p class="item-price"><strike>$1099.00</strike> <span>$869.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Agregar al carro</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="resources\productpage\Manzanita.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Manzanita</h4>
+                    <p class="item-price"><strike>$109.00</strike> <span>$99.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Agregar al carro</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="resources\productpage\Manzanita.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Manzanita</h4>
+                    <p class="item-price"><strike>$599.00</strike> <span>$569.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Agregar al carro</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="resources\productpage\Manzanita.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Manzanita</h4>
+                    <p class="item-price"><strike>$369.00</strike> <span>$349.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Agregar al carro</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="resources\productpage\Manzanita.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Manzanita</h4>
+                    <p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Agregar al carro</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="resources\productpage\Manzanita.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Manzanita</h4>
+                    <p class="item-price"><strike>$450.00</strike> <span>$418.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Agregar al carro</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="resources\productpage\Manzanita.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Manzanita</h4>
+                    <p class="item-price"><strike>$350.00</strike> <span>$330.00</span></p>
+                    <div class="star-rating">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Agregar al carro</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fin de recomendados -->
+
+
+<!-- Preguntas frecuentes -->
+<div class="container my-5">
+
+
+  <!--Section: Content-->
+  <section>
+
+
+    <!-- Section heading -->
+    <h3 class="font-weight-bold black-text mb-4 pb-2 text-center">Preguntas frecuentes</h3>
+    <hr class="w-header">
+    <!-- Section description -->
+    <p class="lead text-muted mx-auto mt-4 pt-2 mb-5 text-center">Tienes alguna pregunta? Tenemos la respuesta!</p>
+
+    <div class="row text-center text-md-left">
+      <div class="col-md-6 mb-4">
+        <h5 class="font-weight-normal mb-3">¿Qué tipo de foto se puede grabar?</h5>
+        <p class="text-muted">Si la foto es en blanco y negro, el resultado será mejor. En caso de foto de color, nosotros hacemos el proceso de preparar la fotografía a grabar.</p>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <h5 class="font-weight-normal mb-3">¿Qué formato puede tener la foto?</h5>
+        <p class="text-muted">En lo posible, sería adecuado una fotografía en formato JPG o PNG.</p>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <h5 class="font-weight-normal mb-3">¿Cuánto tarda en llegar el pedido?</h5>
+        <p class="text-muted">El tiempo de entrega del pedido depende de si eliges un servicio standard o urgente. Puedes elegir la opción con el correspondiente precio.</p>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <h5 class="font-weight-normal mb-3">¿Cuáles son los medios de pago de los que dispongo?</h5>
+        <p class="text-muted">Puedes pagar con Paypal, tarjeta de débito, tarjeta de crédito, o con transferencia bancaria. Debes saber que, en caso de transferencia bancaria, el pedido tendrá un
+          día de retraso hasta la verificación del pago.</p>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <h5 class="font-weight-normal mb-3">¿Dónde obtengo la factura de mi artículo?</h5>
+        <p class="text-muted">La factura se enviará únicamente al correo electrónico suministrado al darte de alta como cliente. Si necesitas que sea dirigido a otro correo puedes enviar un mensaje
+          a facturación@regalazo.com.</p>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <h5 class="font-weight-normal mb-3">¿Qué sucede si no se está satisfecho con el regalo recibido?</h5>
+        <p class="text-muted">Antes de que te quedes con un artículo que no guste, y con una mala sensación, desearíamos te pongas en contacto con nosotros para darte el mejor servicio y
+          resolver la situación. Queremos que te quedes satisfecho con nuestro producto.</p>
+      </div>
+    </div>
+
+  </section>
+
+
+</div>
+<!-- Importo script personal -->
+    <script src="\js\script.js"></script>
+
+<!-- Importo Jquery y bundle bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>

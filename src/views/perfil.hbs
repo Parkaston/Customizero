@@ -1,0 +1,116 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 ">
+
+		</div>
+		<div class="col-md-12">
+		    <div class="card">
+		        <div class="card-body">
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <h4>Perfil</h4>
+		                    <hr>
+		                </div>
+		            </div>
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <form action="/users/profile" method="POST">
+													{{#if user}}
+                              <div class="form-group row">
+                                <label for="nombre" class="col-4 col-form-label">Nombre</label>
+                                <div class="col-8">
+                                  <input id="nombre" name="nombre" placeholder="" class="form-control here" required="required" type="text" value="{{this.user.nombre}}">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="provincia" class="col-4 col-form-label">Provincia</label>
+                                <div class="col-8">
+                                  <input id="provincia" name="provincia"  class="form-control here" type="text"
+																	value="{{this.user.provincia}}">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="localidad" class="col-4 col-form-label">Localidad</label>
+                                <div class="col-8">
+                                  <input id="localidad" name="localidad" placeholder="" class="form-control here" type="text"
+																	value="{{this.user.localidad}}">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="email" class="col-4 col-form-label">Direccion de envio</label>
+                                <div class="col-8">
+                                  <input id="direccion" name="direccion" placeholder="" class="form-control here" type="text"
+																	value="{{this.user.direccion}}">
+                                </div>
+                              </div>
+
+
+
+                              <div class="form-group row">
+                                <div class="offset-4 col-8">
+                                  <button name="submit" type="submit" class="btn btn-primary">Actualizar perfil.</button>
+                                </div>
+
+																<div class="form-group">
+							                      <input type="hidden" name="_csrf" value="{{csrfToken}}">
+							                  </div>
+                              </div>
+														</form>
+															{{/if}}
+
+														<div class="offset-4 col-8">
+														<form action="/users/removeUser" method="POST">
+																<button type="submit" class="btn btn-danger">Cerrar cuenta</button>
+																<div class="form-group">
+																		<input type="hidden" name="_csrf" value="{{csrfToken}}">
+																</div>
+						                </form>
+														</div>
+		                </div>
+								 </div>
+
+		        </div>
+		    </div>
+		</div>
+</div>
+</div>
+
+
+
+
+
+
+		<div class="container">
+		<div class="panel panel-default">
+		<div class="panel-body" style= "margin-bottom:9%">
+						<h3>Mis compras</h3>
+						<hr>
+{{#if orders}}
+		{{# each orders }}
+
+						<ul class="list-group">
+								{{# each this.items }}
+								<li class="list-group-item {{#if this.enviado}} table-success {{/if}} " >
+
+	                    <div class="cart-product-imitation">
+	                      <div class="img-item col-md-6">
+	                        <a href="#" data-id="1">
+	                          <img width="30px" src="{{ this.item.primeraImagen }}" alt="producto">
+													</a>
+
+													<span class="badge">€{{ this.price }} {{this.item.nombre}} x {{ this.qty }} Unidade(s)</span>
+	                      </div>
+	                    </div>
+
+
+								</li>
+								{{/each}}
+								<strong>Valor Total: €{{ this.cart.totalPrice }}</strong>
+						</ul>
+		{{/each}}
+		{{/if}}
+
+		</div>
+		</div>
+		</div>

@@ -1,0 +1,34 @@
+<!-- <form class="form-signin" action="/users/verify" method="POST">
+  <h2 class="form-signin-heading">Verify Your Email</h2>
+
+  <label for="secretToken" class="sr-only">Secret Token</label>
+  <input type="secretToken" id="secretToken" name="secretToken" class="form-control" placeholder="Secret Token" required autofocus>
+
+  <br/>
+
+  <button class="btn btn-lg btn-default btn-block" type="submit">Verify</button>
+</form>
+
+ -->
+
+
+ <body class="main-bg">
+         <div class="login-container text-c animated flipInX">
+                 <div>
+                     <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+                 </div>
+                     <h3 class="text-whitesmoke">Confirma tu cuenta.</h3>
+                     <p class="text-whitesmoke">Unete a Customizero!</p>
+                 <div class="container-content">
+                     <form action="/verify" method="POST" class="margin-t">
+                         <div class="form-group">
+                             <input type="text" name ="secretToken" id="secretToken" class="form-control" placeholder="Ingresa tu codigo de usuario" required="true">
+                         </div>
+                         <button type="submit" class="form-button button-l margin-b">Verifica tu cuenta</button>
+                         <p class="text-whitesmoke text-center"><small>No tienes cuenta?</small></p>
+                         <a class="text-darkyellow" href="/users/signup"><small>Registrate!</small></a>
+                     </form>
+                     <p class="margin-t text-whitesmoke"><small> Customizero &copy; 2021</small> </p>
+                 </div>
+             </div>
+ </body>

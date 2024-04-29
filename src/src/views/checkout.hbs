@@ -1,0 +1,52 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<head>
+
+<link href="\css\checkoutstyle.css" rel="stylesheet" type="text/css">
+<script src="https://js.stripe.com/v3/"></script>
+</head>
+<div id="card-errors" class="alert alert-danger d-none"></div>
+<div class="container ">
+  <div id="Checkout" class="inline">
+      <h1>Realización de pago</h1>
+
+
+
+      <div class="card-row">
+          <span class="visa"></span>
+          <span class="mastercard"></span>
+          <span class="amex"></span>
+          <span class="discover"></span>
+      </div>
+      <form id="payment-form">
+          <div class="form-group">
+
+              <div class="amount-placeholder">
+                <label for="PaymentAmount">Cantidad a pagar:</label>
+                  <span>€</span>
+                  <span>{{total}}</span>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="name"></label>
+              <input id="name" class="form-control" type="text" maxlength="255" placeholder="Nombre en la tarjeta" required name="name"></input>
+          </div>
+          <div class="form-group">
+              <label for="adress"></label>
+              <input id="adress" class="null card-image form-control" type="text" placeholder="Dirección de facturación" required name="adress"></input>
+          </div>
+          <div class="form-group card-form-group">
+                  <label for="card-element"></label>
+                              <div id="card-element"></div>
+          </div>
+              <button id="submit" class="btn btn-success submit-button" >
+              <span class="submit-button-lock"></span>
+              <span class="align-middle">Pagar €{{total}}</span>
+          </button>
+      </form>
+      <div id="messages" role="alert"></div>
+  </div>
+</div>
+
+
+<script src="\js\card.js"></script>

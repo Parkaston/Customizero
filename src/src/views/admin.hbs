@@ -1,0 +1,59 @@
+<table class="table table-hover" id="data">
+  <thead>
+    <tr>
+      <th scope="col">Nombre de usuario</th>
+      <th scope="col">Fecha de pedido</th>
+      <th scope="col">Pedido</th>
+
+      <th scope="col">Direccion</th>
+      <th scope="col">Estado</th>
+      <th scope="col">C.E</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{# each orders}}
+    <tr  class="{{#if this.enviado}}table-success{{/if}}">
+      <th scope="row"><a href="/orderData/{{this._id}}"> {{this.userObject.nombre}} {{this.userObject.apellido}} <a> </th>
+      <td>{{this.createdAt}}</td>
+
+        {{#each this.cart.items}}
+        <td>
+        {{this.item.nombre}}
+
+        {{#if this.item.esfotograbable}}
+        {{#if this.fotoAgregada}}
+          Foto delantera: (<a href="https://customizero.com/{{this.foto}}">foto</a>)
+        {{else}}
+        Sin foto delantera.
+        {{/if}}
+
+          {{else}}
+          (Frase delantera: ({{this.fraseDelantera}}).
+        {{/if}}
+         Frase trasera: ({{this.fraseTrasera}}))
+
+
+        <br>
+        </td>
+
+        {{/each}}
+
+
+        <td>
+        {{this.userObject.direccion}}
+        </td>
+      </td>
+      <td>{{#if this.enviado}}Enviado {{else}} En proceso {{/if}}
+      </td>
+      <td>
+        <form action="/marcarComoEnviado/{{this._id}}" method="POST">
+           <button type="submit" class="btn btn-green btn-rounded">Enviado</button>
+        </form>
+        <form action="/cancelarEnvio/{{this._id}}" method="POST">
+           <button type="submit" class="btn btn-light-moon btn-rounded">En proceso</button>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

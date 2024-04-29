@@ -1,0 +1,23 @@
+<body class="main-bg">
+        <div class="login-container text-c animated flipInX">
+                <div>
+                    <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+                </div>
+                    <h3 class="text-whitesmoke">Confirma tu cuenta.</h3>
+                    <p class="text-whitesmoke">Unete a Customizero!</p>
+                <div class="container-content">
+                    <form action="/reset/{{token}}" method="POST" class="margin-t">
+                        <div class="form-group">
+                            <input type="password" name ="password" id="password" class="form-control" placeholder="Ingresa tu nuevo password" required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" name ="confirm" id="confirm" class="form-control" placeholder="Confirma tu nuevo password" required="true">
+                        </div>
+                        <button type="submit" class="form-button button-l margin-b">Actualizar password</button>
+
+                    </form>
+                    <p class="margin-t text-whitesmoke"><small> Customizero &copy; 2021</small> </p>
+                </div>
+            </div>
+</body>

@@ -1,0 +1,53 @@
+<body class="main-bg">
+        <div class="login-container text-c animated flipInX">
+                <div>
+                    <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+                </div>
+                    <h3 class="text-whitesmoke">Registrate</h3>
+                    <p class="text-whitesmoke">Unete a Customizero</p>
+                <div class="container-content">
+                    <form action= "/users/signup" method="POST" class="margin-t">
+                      <div class="form-group">
+                          <input type="text" name ="nombre" class="form-control" placeholder="Nombre" value="{{nombre}}" required="true">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" name ="apellido" class="form-control" placeholder="Apellido" value="{{apellido}}" required="true">
+                      </div>
+
+                      <div class="form-group">
+                          <input type="email" name ="email" class="form-control" placeholder="Email" value="{{email}}" required="true">
+                      </div>
+                      <div class="form-group">
+                          <input type="password" name ="password" class="form-control" placeholder="Password" value="{{password}}" required="true">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" name ="localidad" class="form-control" placeholder="Localidad" value="{{localidad}}" required="true">
+                      </div>
+                      <div class="form-group">
+                          <input type="number" name ="codigopostal" class="form-control" placeholder="Codigo Postal" value="{{codigopostal}}" required="true">
+                      </div>
+                        <div class="form-group">
+                            <input type="text" name ="provincia" class="form-control" placeholder="Provincia" value="{{provincia}}" required="true">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name ="direccion" class="form-control" placeholder="Dirección" value="{{direccion}}" required="true">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name ="movil" class="form-control" placeholder="movil" value="{{movil}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name ="piso" class="form-control" placeholder="Piso" value="{{piso}}">
+                        </div>
+
+
+                    <button type="submit" class="form-button button-l margin-b">Registrarse</button>
+                    <small>Al registrarte en Customizero aceptas nuestras <a class="text-darkyellow" href="https://customizero.com/politicasdeprivacidad">Politicas de privacidad</a>, y nuestros <a class="text-darkyellow" href="https://customizero.com/terminosycondiciones">Terminos y condiciones</a> </small> <br>
+
+                        <p class="text-whitesmoke text-center"><small>Ya tienes cuenta?</small></p>
+                        <a class="text-darkyellow" href="/users/signin"><small>Inicia sesion</small></a>
+                    </form>
+
+                    <p class="margin-t text-whitesmoke"><small> [[Nombre]] &copy; 2021</small> </p>
+                </div>
+            </div>
+</body>

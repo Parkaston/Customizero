@@ -1,0 +1,84 @@
+
+<head>
+  <link href="\css\orderdata.css" rel="stylesheet" type="text/css">
+</head>
+
+
+
+
+<div class="container">
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Orden #{{order._id}}</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+
+
+
+                <div class=" col-md-6 col-lg-6 ">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Nombre de cliente:</td>
+                        <td>{{order.userObject.nombre}} {{order.userObject.apellido}}</td>
+                      </tr>
+                      <tr>
+                        <td>Email de usuario:</td>
+                        <td>{{order.userObject.email}}</td>
+                      </tr>
+                      <tr>
+                        <td>Provincia:</td>
+                        <td>{{order.userObject.provincia}}</td>
+                      </tr>
+
+                         <tr>
+                             <tr>
+                        <td>Localidad</td>
+                        <td>{{order.userObject.localidad}}</td>
+                      </tr>
+                      <tr>
+                        <td>Direccion de envio:</td>
+                        <td>{{order.userObject.direccion}}</td>
+                      </tr>
+                      <tr>
+                        <td>ID De pago:</td>
+                        <td>{{order.paymentId}}</td>
+                      </tr>
+                        <td>Fecha de pedido:</td>
+                        <td>{{order.createdAt}}</td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class=" col-md-6 col-lg-6 paddedleft ">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <h1>Pedido:</h1>
+                      <tr>
+                        {{#each order.cart.items}}
+                        {{this.item.nombre}} (#{{this.item.codigo}}) (Frase delantera: ({{this.fraseDelantera}}). Frase trasera: ({{this.fraseTrasera}}))
+                        <br>
+                        {{/each}}
+                      </tr>
+
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
