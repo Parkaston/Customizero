@@ -62,8 +62,10 @@ const upload = multer({
 
 
 // Ubicaciones
-const myDomain = "https://customizero.com";
-var url = 'mongodb+srv://fridaelgato:kuntatonet@cluster0.b7oje.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+//const myDomain = "https://customizero.com";
+const myDomain = "http://localhost:3000";
+var url = 'mongodb://localhost:27017/myLocalDatabase';
+// var url = 'mongodb+srv://usuario:contraseña@cluster0.b7oje.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 //Middlewares
 router.use(express.json());
